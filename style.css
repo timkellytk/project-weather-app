@@ -1,0 +1,173 @@
+body {
+	margin: 0px;
+	font-family: Cabin, sans-serif;
+	font-size: 16px;
+  font-weight: 700;
+}
+
+input {
+	font-size: 16px;
+	font-weight: 700;
+}
+
+input:focus, 
+textarea:focus, 
+select:focus { 
+  outline: none;
+}
+
+.section {
+  display: flex;
+  min-height: 100vh;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.67), rgba(0, 0, 0, 0.67)), url('../images/sydney.jpeg');
+  background-position: 0px 0px, 0px 0px;
+  background-size: auto, cover;
+  color: #fff;
+  text-align: center;
+}
+
+.weather-box {
+  position: relative;
+  overflow: hidden;
+  width: 400px;
+  padding: 30px 30px 90px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #f0f0f0;
+  border-radius: 50px;
+  background-color: #fff;
+  color: #000;
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
+}
+
+.location-box {
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.location-and-time {
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  line-height: 24px;
+}
+
+.temperature-box {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+.weather-item-box {
+  display: flex;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.temperature {
+  font-size: 65px;
+  line-height: 90px;
+}
+
+.sunset-block {
+  position: absolute;
+  left: 0%;
+  top: auto;
+  right: 0%;
+  bottom: 0%;
+  z-index: 1;
+  display: flex;
+  padding: 20px 30px;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  background-color: #fff3de;
+}
+
+.weather-icon {
+  position: absolute;
+  left: auto;
+  top: auto;
+  right: -36%;
+  bottom: -14%;
+	width: 400px;
+}
+
+.search-box {
+  width: 400px;
+  margin-bottom: 0px;
+  padding: 25px 30px;
+  border-radius: 50px;
+	background-color: #fff;
+	border-style: hidden;
+}
+
+.form {
+  position: relative;
+  overflow: hidden;
+	border-radius: 50px;
+	margin-bottom: 20px;
+}
+
+.submit-button {
+  position: absolute;
+  left: auto;
+  top: 0%;
+  right: 0%;
+  bottom: 0%;
+  padding-right: 21px;
+  padding-left: 21px;
+  border-radius: 50px;
+  background-color: #fff3de;
+	color: #000;
+	border: 0px;
+	border-style: hidden;
+	cursor: pointer;
+}
+
+.heading {
+  margin-bottom: 20px;
+}
+
+@media screen and (max-width: 479px) {
+  .weather-box {
+    width: 80%;
+  }
+  .search-box {
+    width: 100%;
+  }
+  .form-block {
+    width: 100%;
+	}
+	.section {
+		min-height: 100vh;
+		padding: 20px 5%;
+	}
+	.weather-icon {
+	width: 350px;
+}
+}
+
