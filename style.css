@@ -1,18 +1,18 @@
 body {
-	margin: 0px;
-	font-family: Cabin, sans-serif;
-	font-size: 16px;
+  margin: 0px;
+  font-family: Cabin, sans-serif;
+  font-size: 16px;
   font-weight: 700;
 }
 
 input {
-	font-size: 16px;
-	font-weight: 700;
+  font-size: 16px;
+  font-weight: 700;
 }
 
-input:focus, 
-textarea:focus, 
-select:focus { 
+input:focus,
+textarea:focus,
+select:focus {
   outline: none;
 }
 
@@ -32,7 +32,12 @@ select:focus {
   -webkit-align-items: center;
   -ms-flex-align: center;
   align-items: center;
-  background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.67), rgba(0, 0, 0, 0.67)), url('../images/sydney.jpeg');
+  background-image: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.67),
+      rgba(0, 0, 0, 0.67)
+    ),
+    url('../images/sydney.jpeg');
   background-position: 0px 0px, 0px 0px;
   background-size: auto, cover;
   color: #fff;
@@ -51,10 +56,15 @@ select:focus {
 
 .weather-box.dark {
   background-color: #000;
-  color:#fff; 
+  color: #fff;
 }
 
 .icon {
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
+}
+.sunset-icon {
   width: 20px;
   height: 20px;
   margin-right: 8px;
@@ -106,8 +116,8 @@ select:focus {
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-	background-color: #fff3de;
-	color: black;
+  background-color: #fff3de;
+  color: black;
 }
 
 .weather-icon {
@@ -116,7 +126,7 @@ select:focus {
   top: auto;
   right: -25%;
   bottom: -14%;
-	width: 400px;
+  width: 400px;
 }
 
 .search-box {
@@ -124,15 +134,15 @@ select:focus {
   margin-bottom: 0px;
   padding: 25px 30px;
   border-radius: 50px;
-	background-color: #fff;
-	border-style: hidden;
+  background-color: #fff;
+  border-style: hidden;
 }
 
 .form {
   position: relative;
   overflow: hidden;
-	border-radius: 50px;
-	margin-bottom: 20px;
+  border-radius: 50px;
+  margin-bottom: 20px;
 }
 
 .submit-button {
@@ -145,14 +155,64 @@ select:focus {
   padding-left: 21px;
   border-radius: 50px;
   background-color: #fff3de;
-	color: #000;
-	border: 0px;
-	border-style: hidden;
-	cursor: pointer;
+  color: #000;
+  border: 0px;
+  border-style: hidden;
+  cursor: pointer;
 }
 
 .heading {
   margin-bottom: 20px;
+}
+
+.full-screen {
+  position: absolute;
+  left: 0%;
+  right: 0%;
+  top: 0%;
+  bottom: 0%;
+  z-index: 99;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff3de;
+}
+.spinner {
+  width: 40px;
+  height: 40px;
+  background-color: #333;
+
+  margin: 25px auto;
+  -webkit-animation: sk-rotateplane 1.2s infinite ease-in-out;
+  animation: sk-rotateplane 1.2s infinite ease-in-out;
+}
+
+@-webkit-keyframes sk-rotateplane {
+  0% {
+    -webkit-transform: perspective(120px);
+  }
+  50% {
+    -webkit-transform: perspective(120px) rotateY(180deg);
+  }
+  100% {
+    -webkit-transform: perspective(120px) rotateY(180deg) rotateX(180deg);
+  }
+}
+
+@keyframes sk-rotateplane {
+  0% {
+    transform: perspective(120px) rotateX(0deg) rotateY(0deg);
+    -webkit-transform: perspective(120px) rotateX(0deg) rotateY(0deg);
+  }
+  50% {
+    transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg);
+    -webkit-transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg);
+  }
+  100% {
+    transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
+    -webkit-transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
+  }
 }
 
 @media screen and (max-width: 479px) {
@@ -164,13 +224,12 @@ select:focus {
   }
   .form-block {
     width: 100%;
-	}
-	.section {
-		min-height: 100vh;
-		padding: 20px 5%;
-	}
-	.weather-icon {
-	width: 350px;
+  }
+  .section {
+    min-height: 100vh;
+    padding: 20px 5%;
+  }
+  .weather-icon {
+    width: 350px;
+  }
 }
-}
-
