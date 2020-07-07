@@ -48,7 +48,7 @@ select:focus {
   position: relative;
   overflow: hidden;
   width: 400px;
-  padding: 30px 30px 90px;
+  padding: 30px 30px 30px;
   border-radius: 50px;
   background-color: #fff;
   color: #000;
@@ -125,7 +125,7 @@ select:focus {
   left: auto;
   top: auto;
   right: -25%;
-  bottom: -14%;
+  bottom: -35%;
   width: 400px;
 }
 

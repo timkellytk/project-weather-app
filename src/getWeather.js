@@ -1,11 +1,6 @@
 import { showLoader } from './updateDOM';
 import moment from 'moment';
 
-const localTimeConverter = (sec) => {
-  const date = new Date(sec * 1000);
-  return moment(date).format('LT');
-};
-
 const getWeatherData = async (userInput) => {
   showLoader();
   const response = await fetch(
@@ -22,7 +17,6 @@ const getWeatherData = async (userInput) => {
     feelsLike: Math.round(data.main.feels_like),
     wind: Math.round(data.wind.speed),
     humidity: data.main.humidity,
-    sunset: localTimeConverter(data.sys.sunset),
   };
   return weather;
 };

@@ -19,7 +19,6 @@ const updateWeather = (weatherObject) => {
     feelsLike: 'Feels like ' + weatherObject.feelsLike + '°C',
     wind: weatherObject.wind + ' km/h',
     humidity: weatherObject.humidity + '% humidity',
-    sunset: 'Sunset at ' + weatherObject.sunset,
   };
   const weatherKeys = Object.keys(updatedObject);
   weatherKeys.map((weatherItem) => {
