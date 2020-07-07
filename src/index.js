@@ -1,5 +1,8 @@
-import moment from 'moment'
+import { loadLoader, showLoader, hideLoader } from './loader'
+import moment, { localeData } from 'moment'
 import './style.css'
+
+loadLoader()
 
 const localTimeConverter = (sec) => {
 	const date = new Date(sec * 1000);
@@ -7,6 +10,7 @@ const localTimeConverter = (sec) => {
 }
 
 const getWeatherData = async () => {
+	showLoader();
 	const response = await fetch('http://api.openweathermap.org/data/2.5/weather?q=sydney&appid=7c19479f21a089bc2821f199dacb7a19&units=metric')
 	const data = await response.json()
 	const weather = {
@@ -25,4 +29,8 @@ const getWeatherData = async () => {
 	return weather
 }
 
-getWeatherData().then((response) => { console.log(response) })
+
+getWeatherData().then((response) => {
+	console.log(response)
+	hideLoader();
+})
