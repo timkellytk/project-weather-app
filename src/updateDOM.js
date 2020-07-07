@@ -30,6 +30,7 @@ const updateWeather = (weatherObject) => {
   const image = './images/' + weatherObject.description + '.svg';
   weatherIconLarge.src = image;
   weatherIconSmall.src = image;
+  const weatherBox = document.getElementById('weather');
 };
 
 export { showLoader, hideLoader, updateWeather };

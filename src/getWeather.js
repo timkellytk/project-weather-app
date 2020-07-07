@@ -1,5 +1,4 @@
 import { showLoader } from './updateDOM';
-import moment from 'moment';
 
 const getWeatherData = async (userInput) => {
   showLoader();
@@ -12,7 +11,6 @@ const getWeatherData = async (userInput) => {
   const weather = {
     location: data.name,
     description: data.weather[0].main,
-    time: moment().format('h:mm a'),
     temp: Math.round(data.main.temp),
     feelsLike: Math.round(data.main.feels_like),
     wind: Math.round(data.wind.speed),
