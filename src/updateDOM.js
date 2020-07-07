@@ -26,6 +26,11 @@ const updateWeather = (weatherObject) => {
     const DOM = document.getElementById(weatherItem);
     DOM.textContent = updatedObject[weatherItem];
   });
+  const weatherIconLarge = document.getElementById('weatherIconLarge');
+  const weatherIconSmall = document.getElementById('weatherIconSmall');
+  const image = './images/' + weatherObject.description + '.svg';
+  weatherIconLarge.src = image;
+  weatherIconSmall.src = image;
 };
 
 export { showLoader, hideLoader, updateWeather };
