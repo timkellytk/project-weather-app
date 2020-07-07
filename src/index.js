@@ -1,8 +1,7 @@
-import getWeatherData from './getWeather'
-import { loadLoader, hideLoader } from './loader'
+import getWeatherData from './getWeather';
+import { updateWeather, hideLoader } from './updateDOM';
 
-loadLoader()
 getWeatherData('sydney').then((response) => {
-	console.log(response)
-	hideLoader();
-})
+  updateWeather(response);
+  hideLoader();
+});
