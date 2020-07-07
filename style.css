@@ -44,12 +44,14 @@ select:focus {
   overflow: hidden;
   width: 400px;
   padding: 30px 30px 90px;
-  border-style: solid;
-  border-width: 1px;
-  border-color: #f0f0f0;
   border-radius: 50px;
   background-color: #fff;
   color: #000;
+}
+
+.weather-box.dark {
+  background-color: #000;
+  color:#fff; 
 }
 
 .icon {
@@ -104,14 +106,15 @@ select:focus {
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  background-color: #fff3de;
+	background-color: #fff3de;
+	color: black;
 }
 
 .weather-icon {
   position: absolute;
   left: auto;
   top: auto;
-  right: -36%;
+  right: -25%;
   bottom: -14%;
 	width: 400px;
 }
