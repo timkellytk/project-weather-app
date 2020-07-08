@@ -1,3 +1,5 @@
+import unsplashPhotos from './unsplashPhotos';
+
 const getLoader = () => {
   return document.getElementById('loader');
 };
@@ -40,9 +42,27 @@ const updateWeather = (weatherObject) => {
   updateWeatherIcons(weatherObject.description);
 };
 
-const updateDOM = (promise) => {
-  promise.then((response) => {
-    updateWeather(response);
+const updateBackground = async (weatherObject) => {
+  const linearGradient =
+    'linear-gradient(180deg, rgba(0, 0, 0, 0.67), rgba(0, 0, 0, 0.67))';
+  const query = weatherObject.location;
+  const unsplash = await unsplashPhotos(query);
+  const background = document.getElementById('background');
+  const description = document.getElementById('photoDescription');
+  const imageLink = document.getElementById('image-link');
+  console.log(unsplash);
+  background.style.backgroundImage =
+    linearGradient + ", url('" + unsplash.image + "')";
+  description.textContent = unsplash.description;
+  imageLink.href = unsplash.link;
+};
+
+const updateDOM = async (promise) => {
+  const response = await promise;
+  Promise.all([
+    Promise.resolve(updateWeather(response)),
+    Promise.resolve(updateBackground(response)),
+  ]).then(() => {
     hideLoader();
   });
 };

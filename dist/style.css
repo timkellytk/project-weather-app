@@ -10,10 +10,18 @@ input {
   font-weight: 700;
 }
 
+a {
+  color: white;
+}
+
 input:focus,
 textarea:focus,
 select:focus {
   outline: none;
+}
+
+.inline {
+  display: inline-block;
 }
 
 .section {
@@ -33,11 +41,10 @@ select:focus {
   -ms-flex-align: center;
   align-items: center;
   background-image: linear-gradient(
-      180deg,
-      rgba(0, 0, 0, 0.67),
-      rgba(0, 0, 0, 0.67)
-    ),
-    url('../images/sydney.jpeg');
+    180deg,
+    rgba(0, 0, 0, 1),
+    rgba(0, 0, 0, 0.8)
+  );
   background-position: 0px 0px, 0px 0px;
   background-size: auto, cover;
   color: white;
@@ -55,9 +62,8 @@ select:focus {
   text-align: center;
 }
 
-.weather-box.dark {
-  background-color: #000;
-  color: #fff;
+.unsplash {
+  margin-top: 15px;
 }
 
 .icon {
