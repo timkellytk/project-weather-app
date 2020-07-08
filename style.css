@@ -63,7 +63,9 @@ select:focus {
 }
 
 .unsplash {
-  margin-top: 15px;
+  margin-top: 20px;
+  width: 400px;
+  text-align: center;
 }
 
 .icon {
@@ -224,6 +226,9 @@ select:focus {
 
 @media screen and (max-width: 479px) {
   .weather-box {
+    width: 80%;
+  }
+  .unsplash {
     width: 80%;
   }
   .search-box {
