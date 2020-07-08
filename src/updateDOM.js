@@ -12,6 +12,22 @@ const hideLoader = () => {
   return (loader.style.display = 'none');
 };
 
+const updateWeatherText = (weatherObject) => {
+  const weatherKeys = Object.keys(weatherObject);
+  weatherKeys.map((weatherItem) => {
+    const DOM = document.getElementById(weatherItem);
+    DOM.textContent = weatherObject[weatherItem];
+  });
+};
+
+const updateWeatherIcons = (weatherDescription) => {
+  const weatherIconLarge = document.getElementById('weatherIconLarge');
+  const weatherIconSmall = document.getElementById('weatherIconSmall');
+  const image = './images/' + weatherDescription + '.svg';
+  weatherIconLarge.src = image;
+  weatherIconSmall.src = image;
+};
+
 const updateWeather = (weatherObject) => {
   const updatedObject = {
     ...weatherObject,
@@ -20,17 +36,15 @@ const updateWeather = (weatherObject) => {
     wind: weatherObject.wind + ' km/h',
     humidity: weatherObject.humidity + '% humidity',
   };
-  const weatherKeys = Object.keys(updatedObject);
-  weatherKeys.map((weatherItem) => {
-    const DOM = document.getElementById(weatherItem);
-    DOM.textContent = updatedObject[weatherItem];
-  });
-  const weatherIconLarge = document.getElementById('weatherIconLarge');
-  const weatherIconSmall = document.getElementById('weatherIconSmall');
-  const image = './images/' + weatherObject.description + '.svg';
-  weatherIconLarge.src = image;
-  weatherIconSmall.src = image;
-  const weatherBox = document.getElementById('weather');
+  updateWeatherText(updatedObject);
+  updateWeatherIcons(weatherObject.description);
 };
 
-export { showLoader, hideLoader, updateWeather };
+const updateDOM = (promise) => {
+  promise.then((response) => {
+    updateWeather(response);
+    hideLoader();
+  });
+};
+
+export { showLoader, updateDOM };

@@ -1,7 +1,7 @@
 import getWeatherData from './getWeather';
-import { updateWeather, hideLoader } from './updateDOM';
+import searchListener from './searchListener';
+import { updateDOM } from './updateDOM';
 
-getWeatherData('sydney').then((response) => {
-  updateWeather(response);
-  hideLoader();
-});
+updateDOM(getWeatherData('sydney'));
+
+searchListener();
