@@ -2,11 +2,13 @@ import { showLoader } from './updateDOM';
 
 const getWeatherData = async (userInput) => {
   showLoader();
-  const response = await fetch(
+  const cityArray = userInput.split(',');
+  const city = cityArray[0];
+  const url =
     'http://api.openweathermap.org/data/2.5/weather?q=' +
-      userInput +
-      '&appid=7c19479f21a089bc2821f199dacb7a19&units=metric'
-  );
+    city +
+    '&appid=7c19479f21a089bc2821f199dacb7a19&units=metric';
+  const response = await fetch(url);
   const data = await response.json();
   const weather = {
     location: data.name,

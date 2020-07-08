@@ -1,5 +1,6 @@
 import getWeather from './getWeather';
 import { updateDOM } from './updateDOM';
+import algoliaPlaces from './algoliaPlaces';
 
 const searchListener = () => {
   const search = document.getElementById('search');
@@ -11,6 +12,7 @@ const searchListener = () => {
     return (search.value = '');
   };
 
+  algoliaPlaces(search, searchLocation);
   return searchBtn.addEventListener('click', searchLocation);
 };
 
