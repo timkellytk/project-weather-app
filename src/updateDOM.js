@@ -23,9 +23,10 @@ const updateWeatherText = (weatherObject) => {
 };
 
 const updateWeatherIcons = (weatherDescription) => {
+  const weatherLowerCase = weatherDescription.toLowerCase();
   const weatherIconLarge = document.getElementById('weatherIconLarge');
   const weatherIconSmall = document.getElementById('weatherIconSmall');
-  const image = './images/' + weatherDescription + '.svg';
+  const image = './images/' + weatherLowerCase + '.svg';
   weatherIconLarge.src = image;
   weatherIconSmall.src = image;
 };
@@ -50,7 +51,6 @@ const updateBackground = async (weatherObject) => {
   const background = document.getElementById('background');
   const description = document.getElementById('photoDescription');
   const imageLink = document.getElementById('image-link');
-  console.log(unsplash);
   background.style.backgroundImage =
     linearGradient + ", url('" + unsplash.image + "')";
   description.textContent = unsplash.description;
