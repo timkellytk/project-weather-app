@@ -5,7 +5,7 @@ const getWeatherData = async (userInput) => {
   const cityArray = userInput.split(',');
   const city = cityArray[0];
   const url =
-    'http://api.openweathermap.org/data/2.5/weather?q=' +
+    'https://api.openweathermap.org/data/2.5/weather?q=' +
     city +
     '&appid=7c19479f21a089bc2821f199dacb7a19&units=metric';
   const response = await fetch(url);
