@@ -40,8 +40,8 @@ select:focus {
     url('../images/sydney.jpeg');
   background-position: 0px 0px, 0px 0px;
   background-size: auto, cover;
-  color: #fff;
-  text-align: center;
+  color: white;
+  text-align: left;
 }
 
 .weather-box {
@@ -52,6 +52,7 @@ select:focus {
   border-radius: 50px;
   background-color: #fff;
   color: #000;
+  text-align: center;
 }
 
 .weather-box.dark {
@@ -140,9 +141,9 @@ select:focus {
 
 .form {
   position: relative;
-  overflow: hidden;
   border-radius: 50px;
   margin-bottom: 20px;
+  color: black;
 }
 
 .submit-button {
