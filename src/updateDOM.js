@@ -16,7 +16,7 @@ const hideLoader = () => {
 
 const updateWeatherText = (weatherObject) => {
   const weatherKeys = Object.keys(weatherObject);
-  weatherKeys.map((weatherItem) => {
+  weatherKeys.forEach((weatherItem) => {
     const DOM = document.getElementById(weatherItem);
     DOM.textContent = weatherObject[weatherItem];
   });
