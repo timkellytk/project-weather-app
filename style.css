@@ -135,7 +135,7 @@ select:focus {
   left: auto;
   top: auto;
   right: -25%;
-  bottom: -20%;
+  bottom: -35%;
   width: 400px;
 }
 
@@ -244,5 +244,6 @@ select:focus {
   }
   .weather-icon {
     width: 300px;
+    bottom: -20%;
   }
 }
