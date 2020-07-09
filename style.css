@@ -103,6 +103,7 @@ select:focus {
 
 .weather-item-box {
   display: flex;
+  z-index: 1;
   padding-top: 10px;
   padding-bottom: 10px;
 }
@@ -134,7 +135,7 @@ select:focus {
   left: auto;
   top: auto;
   right: -25%;
-  bottom: -35%;
+  bottom: -20%;
   width: 400px;
 }
 
@@ -242,6 +243,6 @@ select:focus {
     padding: 20px 5%;
   }
   .weather-icon {
-    width: 350px;
+    width: 300px;
   }
 }
